@@ -7,7 +7,7 @@ on:
             - 'Readme.md'
 jobs:
     build:
-        runs-on: ubuntu:latest
+        runs-on: ubuntu-latest
         steps:
         - name: Checkout repository
           uses: actions/checkout@5
