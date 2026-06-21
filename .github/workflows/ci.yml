@@ -47,6 +47,8 @@ jobs:
             file: ./Dockerfile
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME}}/go-web-app:${{github.run_id}}
+        - name: Build Docker Image
+          run: docker build -t go-web-app .
 
         - name: Checkout repository
           uses: actions/checkout@v4
