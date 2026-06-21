@@ -56,7 +56,10 @@ jobs:
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME}}/go-web-app:${{github.run_id}}
 
-
+        - name: Checkout repository
+          uses: actions/checkout@v4
+          with:
+              token: ${{ secrets.TOKEN }}
         - name : commit and push changes
           run: git push
 
