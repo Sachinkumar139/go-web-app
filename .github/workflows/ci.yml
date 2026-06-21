@@ -22,15 +22,7 @@ jobs:
         - name: Test
           run: go test ./...
 
-    code-quality:
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout repository
-          uses: actions/checkout@v4
-        - name: Run golang-lint
-          uses: golangci/golangci-lint-action@v6
-          with:
-            version: v1.56.2
+    
 
     push:
       runs-on: ubuntu-latest
@@ -62,6 +54,16 @@ jobs:
               token: ${{ secrets.TOKEN }}
         - name : commit and push changes
           run: git push
+
+    code-quality:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repository
+          uses: actions/checkout@v4
+        - name: Run golang-lint
+          uses: golangci/golangci-lint-action@v6
+          with:
+            version: v1.56.2      
 
     
 
