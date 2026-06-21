@@ -10,9 +10,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout repository
-          uses: actions/checkout@5
+          uses: actions/checkout@4
         - name: Set up Go 1.22
-          uses: actions/Setup-go@v5
+          uses: actions/Setup-go@v4
           with:
             go-version: '1.22'
         - uses: golangci/golangci-lint-action@v8    
